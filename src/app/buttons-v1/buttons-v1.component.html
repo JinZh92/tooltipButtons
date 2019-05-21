@@ -1,0 +1,10 @@
+
+<div *ngFor="let button of repeater; let i = index; let last = last;">
+  <app-tooltip-button
+    [currentIndex]='i'
+    [isLast]='last'
+    (buttonClicked)='onButtonClicked($event)'
+    [showTooltip]='i == indexToShowTooltip'
+  >
+  </app-tooltip-button>
+</div>
