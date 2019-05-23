@@ -5,3 +5,6 @@ This project was generated with [Angular CLI](https://github.com/angular/angular
 ## Development server
 
 Run `ng serve` to start up the server. Navigate to `http://localhost:4200/`.
+
+##Github pages link:
+https://jinzh92.github.io/tooltipButtons/
