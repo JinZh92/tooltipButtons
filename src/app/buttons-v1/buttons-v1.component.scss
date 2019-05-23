@@ -1,0 +1,14 @@
+$smaller-screen: 960px;
+
+.c-button-v1__container {
+	height: 300px;
+	margin-top: 200px;
+	margin-bottom: 1000px;
+	background-color: lightgray;
+	display: flex;
+	align-items: center;
+	justify-content: space-evenly;
+	@media screen and (max-width: $smaller-screen) {
+		flex-direction: column;
+	}
+}

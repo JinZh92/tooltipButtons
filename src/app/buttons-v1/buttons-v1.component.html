@@ -1,10 +1,30 @@
 
-<div *ngFor="let button of repeater; let i = index; let last = last;">
+<div class="c-button-v1__container" >
   <app-tooltip-button
+    *ngFor="let button of repeater; let i = index; let last = last;"
     [currentIndex]='i'
     [isLast]='last'
     (buttonClicked)='onButtonClicked($event)'
+    (clickedOutside)='resetTooltips()'
     [showTooltip]='i == indexToShowTooltip'
   >
   </app-tooltip-button>
+</div>
+
+<!-- TODO: Add forms for changing the number of buttons, Event logging, current tooltip open status -->
+<div style="display: none">
+  <div>
+    <label for="">Number of buttons:</label>
+    <input type="text" name="">
+  </div>
+
+  <!-- Current active tooltip -->
+  <div>
+    Current active tooltip #:
+  </div>
+
+  <!-- Events Log -->
+  <div>
+    Events:
+  </div>
 </div>

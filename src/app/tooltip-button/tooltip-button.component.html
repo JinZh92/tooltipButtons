@@ -1,9 +1,14 @@
 
 <div class="c-tooltip-button">
-
-  <button (click)="onClickButton()">Click Me For Tooltip</button>
-  <app-tooltip-box
-    [showTooltip]="showTooltip">
-  </app-tooltip-box>
+    <button (click)="onClickButton()">
+      Click Me For Tooltip: #{{currentIndex + 1}}
+    </button>
+    <app-tooltip-box
+      *ngIf="showTooltip"
+      [currentIndex]="currentIndex"
+      (clickedOutside)="onClickedOutside()">
+    </app-tooltip-box>
 </div>
+
+
 

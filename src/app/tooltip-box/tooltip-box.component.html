@@ -1,5 +1,9 @@
-<div class="c-tooltip">
-  <div class="textbox" [ngClass]="{ 'textbox-show': showTooltip }">
-    tooltip texts
+<div #tooltipRef
+  class="c-tooltip"
+  [ngClass]="{ 'c-tooltip--visible': !isLoading,
+    'c-tooltip--top': !showAtBottom,
+    'c-tooltip--bottom': showAtBottom}">
+  <div class="c-tooltip__textbox">
+    This is a super helpful tooltip for button: #{{currentIndex + 1}}!
   </div>
 </div>

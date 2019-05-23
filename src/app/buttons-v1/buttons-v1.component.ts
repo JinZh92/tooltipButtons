@@ -1,4 +1,4 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, HostListener } from '@angular/core';
 
 @Component({
   selector: 'app-buttons-v1',
@@ -9,19 +9,30 @@ export class ButtonsV1Component implements OnInit {
 
   public repeater: any[];
   public indexToShowTooltip: number;
-
-  @Input() size: string;
+  public size: number;
 
   constructor() { }
 
   ngOnInit() {
-    this.repeater = Array(parseInt(this.size, 10));
-    console.log('---', this.repeater);
+    this.size = 2;
+    this.resetTooltips();
+    this.repeater = Array(this.size);
   }
 
   onButtonClicked(index: number) {
-    console.log('---before assign', this.indexToShowTooltip);
     this.indexToShowTooltip = index;
   }
 
+  @HostListener('document:keydown.escape', ['$event'])
+  onEsc(event: KeyboardEvent) {
+    console.log('Keyboard esc', event);
+    this.resetTooltips();
+  }
+
+  /**
+   * Hide all active tooltips
+   */
+  resetTooltips() {
+    this.indexToShowTooltip = null;
+  }
 }

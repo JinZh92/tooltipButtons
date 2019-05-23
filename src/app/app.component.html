@@ -1,9 +1,37 @@
-<div
-  class="app-container"
-  (keydown.esc)="onKeyDown($event)">
-  <app-buttons-v1
-    size="2">
-  </app-buttons-v1>
+<div class="app-description">
+  <div>
+    Implemented features:
+    <ul>
+      <li>Basic tooltip requirements.</li>
+      <li>Top/bottom edge detection and change tooltip location accordingly.</li>
+      <li>Press 'Esc' key to close all tooltips</li>
+      <li>Clicking outside of tooltip will close it; Clicking inside it will not.</li>
+      <li>Responsive design (Shrinking resolution to smaller then 960px to have buttons displayed vertically.)</li>
+    </ul>
+  </div>
+  
+  <div>
+    WIP/Todo:
+    <ul>
+        <li>Add form to allow changing the number of buttons.</li>
+        <li>Add a logging panel for the following events:
+          <ul>
+              <li>Button click.</li>
+              <li>Scrolling to top/button edge.</li>
+              <li>Esc key press.</li>
+              <li>Clicking inside/outside of the tooltip.</li>
+          </ul>
+          
+        </li>
+        <li>Add a status panel to display the current active tooltip #.</li>
+        <li>Add accessibility feature: left/right arrow key to switch between two tooltips.</li>
+    </ul>
+  </div>
+
+  <b>Also, sorry for making this super basic and ugly looking. :( </b> 
 </div>
+
+
+<app-buttons-v1 class="app-container"></app-buttons-v1>
 
 <router-outlet></router-outlet>

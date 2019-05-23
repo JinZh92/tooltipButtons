@@ -11,6 +11,7 @@ export class TooltipButtonComponent implements OnInit {
   @Input() isLast: boolean;
   @Input() showTooltip: boolean;
   @Output() buttonClicked = new EventEmitter<number>();
+  @Output() clickedOutside = new EventEmitter<any>();
 
   constructor() { }
 
@@ -18,9 +19,19 @@ export class TooltipButtonComponent implements OnInit {
     this.showTooltip = false;
   }
 
+  /**
+   * Show tooltip for a button on click
+   */
   onClickButton() {
-    this.showTooltip = true;
     this.buttonClicked.emit(this.currentIndex);
+  }
+
+  /**
+   * User clicked outside of the tooltip, emit event to close it.
+   */
+  onClickedOutside() {
+    console.log('clicked outside - tooltip buttons');
+    this.clickedOutside.emit();
   }
 
 }

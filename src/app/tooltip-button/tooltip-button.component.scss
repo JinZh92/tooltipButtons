@@ -1,11 +1,14 @@
 .c-tooltip-button {
-	background-color: aquamarine;
-	width: 200px;
-	height: 200px;
-	padding: 20px;
+	position: relative;
+	width: min-content;
 	button {
-		width: 100px;
-		
+		padding: 10px 20px;
+		width: 170px;
+		background-color: white;
+		border-radius: 5px;
+		&:hover {
+			background-color: lightblue;
+		}
 	}
 }
 
